@@ -1,5 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
+import envelope from "../../assets/svg/envelope.svg";
+import globe from "../../assets/svg/globe.svg";
+import linkedin from "../../assets/svg/linkedin.svg";
+import github from "../../assets/svg/github.svg";
+import pdf from "../../assets/svg/file.svg";
+import React from "react";
 
 const Footer = () => {
   return (
@@ -15,11 +19,21 @@ const Footer = () => {
             </p>
           </div>
           <div className="social-links">
-            <FontAwesomeIcon icon="fa-solid fa-envelope" />
-            <FontAwesomeIcon icon="fa-solid fa-globe" />
-            <FontAwesomeIcon icon="fa-brands fa-github" />
-            <FontAwesomeIcon icon="fa-brands fa-linkedin" />
-            <FontAwesomeIcon icon="fa-solid fa-file" />
+            <span className="envelope">
+              <img src={envelope} alt="envelope" />
+            </span>
+            <span className="envelope">
+              <img src={globe} alt="globe" />
+            </span>
+            <span className="envelope">
+              <img src={linkedin} alt="linkedin" />
+            </span>
+            <span className="envelope">
+              <img src={github} alt="github" />
+            </span>
+            <span className="envelope">
+              <img src={pdf} alt="pdf" />
+            </span>
           </div>
         </div>
         <div className="footer__wrapper--references">
@@ -32,6 +46,6 @@ const Footer = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Footer
+export default Footer;

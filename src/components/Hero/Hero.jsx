@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import downArrow from "../../assets/svg/down-arrow.svg";
 import React from "react";
 
 const Hero = () => {
@@ -10,7 +10,9 @@ const Hero = () => {
         <span className="hero__content--bold">Functional Web Development</span>
       </h1>
       <div className="hero__icon">
-        <FontAwesomeIcon icon="fa-solid fa-arrow-down" />
+        <span>
+          <img src={downArrow} alt="down arrow" />
+        </span>
       </div>
     </div>
   );

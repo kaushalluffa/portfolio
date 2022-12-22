@@ -1,5 +1,8 @@
 import React from "react";
-
+import webDevImg from '../../assets/images/webdev.jpeg'
+import musicImg from '../../assets/images/music.jpeg'
+import travelImg from '../../assets/images/travel.jpeg'
+import gameImg from '../../assets/images/game.jpeg'
 const About = () => {
   return (
     <div className="about">
@@ -15,7 +18,20 @@ const About = () => {
           </p>
         </div>
         <div className="col-2">
-            
+            <div className="col-2__imgs">
+              <div className="col-2__imgs--image">
+                <img src={webDevImg} alt="web development photo"/>
+              </div>
+              <div className="col-2__imgs--image">
+                <img src={musicImg} alt="web development photo"/>
+              </div>
+              <div className="col-2__imgs--image">
+                <img src={travelImg} alt="web development photo"/>
+              </div>
+              <div className="col-2__imgs--image">
+                <img src={gameImg} alt="web development photo"/>
+              </div>
+            </div>
         </div>
       </div>
     </div>

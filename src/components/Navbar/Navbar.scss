@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4rem 11.2rem;
+  align-items: center;
+  &__logo {
+    color: $primary;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+  }
+  &__navitems {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    a {
+      font-size: 1.6rem;
+      color: white;
+      position: relative;
+      padding: 0.5rem;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0.3rem;
+        border-radius: 1rem;
+        background-color: white;
+        bottom: 0;
+        left: 0;
+        transition: all 0.4s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}

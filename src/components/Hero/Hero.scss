@@ -1,0 +1,30 @@
+@import "../../styles/_variables.scss";
+
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  color: white;
+  &__content {
+    width: 60%;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 300;
+    color: $neutral1;
+    line-height: 1.5;
+    &--bold {
+      font-weight: 600;
+      color: white;
+      font-size: 4rem;
+    }
+  }
+  &__icon {
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

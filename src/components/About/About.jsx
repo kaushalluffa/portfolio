@@ -3,6 +3,7 @@ import webDevImg from '../../assets/images/webdev.jpeg'
 import musicImg from '../../assets/images/music.jpeg'
 import travelImg from '../../assets/images/travel.jpeg'
 import gameImg from '../../assets/images/game.jpeg'
+import './About.scss'
 const About = () => {
   return (
     <div className="about">
@@ -11,7 +12,7 @@ const About = () => {
           <h4 className="col-1__title">A BIT ABOUT ME</h4>
           <p className="col-1__description">
             I am a front-end developer who is passionate about creating
-            <span className="col-1__description--bold">
+            <span className="col-1__description--bold">{" "}
               beautiful and functional digital experiences. Besides development,
               I love games, travelling and music.
             </span>

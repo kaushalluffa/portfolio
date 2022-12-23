@@ -23,14 +23,13 @@
     background-repeat: no-repeat;
   }
   &__content {
-    width: 60%;
+    max-width: 60%;
     font-size: 2.5rem;
     text-align: center;
     font-weight: 300;
     color: $neutral1;
     line-height: 1.5;
     z-index: 2;
-    opacity: .7;
     transition: all .4s;
     &:hover{
       opacity: 1;

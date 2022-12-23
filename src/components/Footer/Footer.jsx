@@ -1,9 +1,11 @@
-import envelope from "../../assets/svg/envelope.svg";
-import globe from "../../assets/svg/globe.svg";
-import linkedin from "../../assets/svg/linkedin.svg";
-import github from "../../assets/svg/github.svg";
-import pdf from "../../assets/svg/file.svg";
-import React from "react";
+import {
+  FaEnvelope,
+  FaGlobe,
+  FaLinkedin,
+  FaGithub,
+  FaFilePdf,
+} from "react-icons/fa";
+import "./Footer.scss";
 
 const Footer = () => {
   return (
@@ -20,24 +22,26 @@ const Footer = () => {
           </div>
           <div className="social-links">
             <span className="envelope">
-              <img src={envelope} alt="envelope" />
+              <FaEnvelope />
             </span>
-            <span className="envelope">
-              <img src={globe} alt="globe" />
+            <span className="globe">
+              <FaGlobe />
             </span>
-            <span className="envelope">
-              <img src={linkedin} alt="linkedin" />
+            <span className="linkedin">
+              <FaLinkedin />
             </span>
-            <span className="envelope">
-              <img src={github} alt="github" />
+            <span className="github">
+              <FaGithub />
             </span>
-            <span className="envelope">
-              <img src={pdf} alt="pdf" />
+            <span className="pdf">
+              <FaFilePdf />
             </span>
           </div>
         </div>
         <div className="footer__wrapper--references">
-          <p className="me">Developed By: Kaushal Luffa</p>
+          <p className="me">
+            Developed By: <span className="name">Kaushal Luffa</span>
+          </p>
           <p className="design">
             Design inspiration:{" "}
             <a href="https://www.figma.com/@srinivas_dezign">@Srinivas</a>

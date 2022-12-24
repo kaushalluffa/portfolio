@@ -20,7 +20,7 @@ function App() {
     axios
       .get(URL)
       .then((res) => {
-        console.log(res.data.result)
+       
         setProjects(res.data.result)})
       .catch((err) => console.error(err));
   }, []);

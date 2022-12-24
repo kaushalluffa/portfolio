@@ -9,7 +9,11 @@
     display: flex;
     gap: 2.125rem;
     color: white;
-    height: 80vh;
+    min-height: 80vh;
+    flex-direction: column;
+    @include laptop{
+        flex-direction: row;
+    }
     .col-1,
     .col-2 {
       flex: 0 1 50%;

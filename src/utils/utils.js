@@ -6,6 +6,7 @@ import sanityClient from "@sanity/client";
        projectId: import.meta.env.VITE_PROJECT_ID,
        dataset: import.meta.env.VITE_DATASET,
        useCdn: true,
+       apiVersion: '2021-10-21'
      });
       const builder = imageUrlBuilder(client);
       

@@ -1,4 +1,3 @@
-
 import { FaArrowDown } from "react-icons/fa";
 import React from "react";
 import "./Hero.scss";

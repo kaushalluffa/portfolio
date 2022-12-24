@@ -1,27 +1,36 @@
 @import "../../styles/variables";
 
 .navbar {
+  width: 100%;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  .bars {
+    color: white;
+    font-size: 1.8rem;
+    @include tablet {
+      display: none;
+    }
+  }
+
   @include tablet {
-    display: flex;
-    justify-content: space-between;
     padding: 1.5rem 7rem;
-    align-items: center;
   }
   @include desktop {
   }
   &__logo {
-    @include tablet {
-      color: #fff;
-      font-size: 2.2rem;
-      letter-spacing: 0.188rem;
-      font-weight: bold;
-      font-family: "Gruppo", cursive;
-      font-weight: 400;
-      position: relative;
-      padding: 0.5rem 0.8rem;
-      transition: all 0.4s;
-      border: 2px solid #fff;
-    }
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.188rem;
+    font-weight: bold;
+    font-family: "Gruppo", cursive;
+    font-weight: 400;
+    position: relative;
+    padding: 0.5rem 0.8rem;
+    transition: all 0.4s;
+    border: 2px solid #fff;
     &::before {
       content: "";
       position: absolute;
@@ -55,6 +64,11 @@
     .text {
       position: relative;
       z-index: 3;
+    }
+    @include tablet {
+      font-size: 2.2rem;
+      letter-spacing: 0.188rem;
+      padding: 0.5rem 0.8rem;
     }
   }
   &__navitems {
@@ -95,4 +109,37 @@
       }
     }
   }
+}
+.menu {
+  border: 1px solid white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+  background-color: white;
+  transition: all .3s;
+  a {
+    padding-bottom: 0.3rem;
+    color: $bg;
+    position: relative;
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $bg;
+      content: "";
+      position: absolute;
+      border-radius: .5rem;
+    }
+  }
+  @include tablet{
+    display: none;
+  }
+}
+.show{
+  display: flex;
+  
 }

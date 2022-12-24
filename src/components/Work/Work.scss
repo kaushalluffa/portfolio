@@ -4,10 +4,14 @@
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  padding: 2.5rem 6.875rem;
   justify-content: center;
   width: 100%;
+  gap: 1rem;
+  padding: 0 2rem;
+  @include tablet {
+    gap: 2.5rem;
+    padding: 2.5rem 6.875rem;
+  }
 
   &__title {
     color: $neutral1;
@@ -25,17 +29,24 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 6.25rem;
-    padding: 6.25rem 0;
+    gap: 3rem;
+    padding: 2.25rem 0;
     @include tablet {
+      gap: 6.25rem;
       padding: 4.25rem 0;
     }
     &--card {
       display: flex;
       justify-content: space-between;
       min-height: 20rem;
+      flex-direction: column;
+      @include tablet {
+        flex-direction: row;
+      }
       &:nth-child(2n + 2) {
-        flex-direction: row-reverse;
+        @include tablet {
+          flex-direction: row-reverse;
+        }
         .col-1 {
           background-color: azure;
         }
@@ -44,10 +55,13 @@
         flex: 0 1 49%;
         background-color: beige;
         border-radius: 1.25rem;
-        padding: 3rem;
+        padding: 1.5rem;
 
         @include tablet {
           padding: 2rem;
+        }
+        @include laptop{
+          padding: 3rem;
         }
         &__img {
           width: 100%;

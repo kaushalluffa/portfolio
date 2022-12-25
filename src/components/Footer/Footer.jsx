@@ -21,21 +21,35 @@ const Footer = () => {
             </p>
           </div>
           <div className="social-links">
-            <span className="envelope">
+            <a
+              className="envelope"
+              href="mailto:kaushalluffa91@gmail.com"
+              target="_blank"
+            >
               <FaEnvelope />
-            </span>
-            <span className="globe">
-              <FaGlobe />
-            </span>
-            <span className="linkedin">
+            </a>
+
+            <a
+              className="linkedin"
+              href="https://linkedin.com/in/kaushalluffa"
+              target="_blank"
+            >
               <FaLinkedin />
-            </span>
-            <span className="github">
+            </a>
+            <a
+              className="github"
+              href="https://github.com/kaushalluffa"
+              target="_blank"
+            >
               <FaGithub />
-            </span>
-            <span className="pdf">
+            </a>
+            <a
+              className="pdf"
+              href="https://drive.google.com/file/d/1ko9RkZ1JEMRZMZo70SYoTBLgufweqtpz/view?usp=sharing"
+              download
+            >
               <FaFilePdf />
-            </span>
+            </a>
           </div>
         </div>
         <div className="footer__wrapper--references">

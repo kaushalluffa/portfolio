@@ -4,7 +4,7 @@ import "./Work.scss";
 const Work = ({ projects, urlFor }) => {
   
   return (
-    <section className="work">
+    <section className="work" id="work">
       <h2 className="work__title">
         Selected <span className="work__title--bolded">Works</span>
       </h2>

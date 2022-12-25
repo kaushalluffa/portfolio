@@ -15,8 +15,8 @@ const Navbar = () => {
         </div>
         <div className="navbar__navitems">
           <Link to="/">HOME</Link>
-          <Link to="/">WORK</Link>
-          <Link to="/">ABOUT</Link>
+          <a href="#work">WORK</a>
+          <a href="#about">ABOUT</a>
         </div>
         <div className="bars" onClick={openMenu}>
           <FaBars />
@@ -24,8 +24,8 @@ const Navbar = () => {
       </div>
       <div className={`menu ${show ? 'show': ''}`}>
         <Link to="/">HOME</Link>
-        <Link to="/">WORK</Link>
-        <Link to="/">ABOUT</Link>
+        <a href="#work">WORK</a>
+        <a href="#about">ABOUT</a>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import gameImg from '../../assets/images/game.jpeg'
 import './About.scss'
 const About = () => {
   return (
-    <div className="about">
+    <div className="about" id="about">
       <div className="about__wrapper">
         <div className="col-1">
           <h4 className="col-1__title">A BIT ABOUT ME</h4>

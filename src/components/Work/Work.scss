@@ -60,7 +60,7 @@
         @include tablet {
           padding: 2rem;
         }
-        @include laptop{
+        @include laptop {
           padding: 3rem;
         }
         &__img {
@@ -124,19 +124,17 @@
         }
         &__btn {
           margin-top: 1rem;
-          border-radius: 1rem;
-          color: inherit;
-          border: 1px solid white;
-          padding: 0.5rem;
+          padding: 1rem;
           max-width: 8rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
           transform: scale(1);
           transition: all 0.4s;
-          &:hover {
-            background-color: white;
-            color: $bg;
+          &--link {
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
           }
         }
       }

@@ -1,9 +1,8 @@
-import { FaArrowRight } from "react-icons/fa";
+import { FaGlobe, FaGithub } from "react-icons/fa";
 import React from "react";
-import { Link } from "react-router-dom";
-import project from "../../assets/images/webdev.jpeg";
 import "./Work.scss";
-const Work = ({projects,urlFor}) => {
+const Work = ({ projects, urlFor }) => {
+  
   return (
     <section className="work">
       <h2 className="work__title">
@@ -26,17 +25,32 @@ const Work = ({projects,urlFor}) => {
                       <p className="content__description">
                         {project?.one_line}{" "}
                         <span className="content__description--bold">
-                         {project?.short_description}
+                          {project?.short_description}
                         </span>
                       </p>
                     </div>
                     <div className="col-2__content--stack">
-                      ReactJS, NodeJS, MongoDB, ExpressJS
+                      {project?.stack.map((s) => (
+                        <span key={s}>{s}, </span>
+                      ))}
                     </div>
                   </div>
-                  <Link to="/" className="col-2__btn">
-                    View Work <FaArrowRight />
-                  </Link>
+                  <div className="col-2__btn">
+                    <a
+                      target="_blank"
+                      className="col-2__btn--link"
+                      href={project?.github_url}
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      target="_blank"
+                      className="col-2__btn--link"
+                      href={project?.demo_url}
+                    >
+                      <FaGlobe />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

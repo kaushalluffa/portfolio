@@ -2,7 +2,6 @@ import { FaGlobe, FaGithub } from "react-icons/fa";
 import React from "react";
 import "./Work.scss";
 const Work = ({ projects, urlFor }) => {
-  
   return (
     <section className="work" id="work">
       <h2 className="work__title">
@@ -30,9 +29,9 @@ const Work = ({ projects, urlFor }) => {
                       </p>
                     </div>
                     <div className="col-2__content--stack">
-                      {project?.stack?.map((s) => (
-                        <span key={s}>{s}, </span>
-                      ))}
+                      {project &&
+                        project?.stack &&
+                        project?.stack?.map((s) => <span key={s}>{s}, </span>)}
                     </div>
                   </div>
                   <div className="col-2__btn">

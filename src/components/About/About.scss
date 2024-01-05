@@ -1,0 +1,77 @@
+@import "../../styles/_variables.scss";
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4.625rem 6.688rem;
+  &__wrapper {
+    display: flex;
+    gap: 2.125rem;
+    color: white;
+    min-height: 80vh;
+    flex-direction: column;
+    @include laptop {
+      flex-direction: row;
+    }
+    .col-1,
+    .col-2 {
+      @include tablet {
+        flex: 0 1 50%;
+      }
+    }
+    .col-1 {
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      text-align:center;
+@include laptop{
+  text-align: start;
+}
+      &__title {
+        font-size: 1.3rem;
+        @include tablet {
+          font-size: 1.5rem;
+        }
+      }
+      &__description {
+        color: $neutral1;
+        font-weight: 300;
+        line-height: 1.5;
+        font-size: 1.2rem;
+        @include tablet {
+          font-size: 2rem;
+        }
+        &--bold {
+          color: white;
+        }
+      }
+    }
+    .col-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      &__imgs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        padding: 1rem;
+        &--image {
+          cursor: pointer;
+          width: 17rem;
+          transform: scale(1);
+          transition: all 0.3s;
+          &:nth-child(2n + 2) {
+            align-self: flex-end;
+          }
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}

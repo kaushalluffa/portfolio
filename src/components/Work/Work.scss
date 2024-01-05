@@ -1,0 +1,143 @@
+@import "../../styles/_variables.scss";
+
+.work {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 0 2rem;
+  @include tablet {
+    gap: 2.5rem;
+    padding: 2.5rem 6.875rem;
+  }
+
+  &__title {
+    color: $neutral1;
+    font-weight: 300;
+    @include tablet {
+      font-size: 2.5rem;
+    }
+    &--bolded {
+      color: white;
+      @include tablet {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2.25rem 0;
+    @include tablet {
+      gap: 6.25rem;
+      padding: 4.25rem 0;
+    }
+    &--card {
+      display: flex;
+      justify-content: space-between;
+      min-height: 20rem;
+      flex-direction: column;
+      @include tablet {
+        flex-direction: row;
+      }
+      &:nth-child(2n + 2) {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+        .col-1 {
+          background-color: azure;
+        }
+      }
+      .col-1 {
+        flex: 0 1 49%;
+        background-color: beige;
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+
+        @include tablet {
+          padding: 2rem;
+        }
+        @include laptop {
+          padding: 3rem;
+        }
+        &__img {
+          width: 100%;
+          height: 100%;
+          transform: scale(1);
+          transition: all 0.4s;
+          img {
+            transition: all 0.4s;
+          }
+          &:hover {
+            img {
+              border-radius: 1.25rem;
+            }
+          }
+          cursor: pointer;
+          border-radius: 1.25rem;
+
+          &:hover {
+            transform: scale(1.01);
+          }
+        }
+      }
+      .col-2 {
+        flex: 0 1 49%;
+        display: flex;
+        padding: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        &__content {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          line-height: 1.5;
+          &--title-description {
+            .content__title {
+              color: $neutral1;
+              font-weight: 300;
+              font-size: 1rem;
+              @include tablet {
+                font-size: 1rem;
+              }
+            }
+            .content__description {
+              font-size: 0.8rem;
+              color: $neutral1;
+              @include tablet {
+                font-size: 1rem;
+              }
+              @include laptop {
+                font-size: 1.8rem;
+              }
+              &--bold {
+                color: white;
+              }
+            }
+          }
+          &--stack {
+            font-size: 1.2rem;
+          }
+        }
+        &__btn {
+          margin-top: 1rem;
+          padding: 1rem;
+          max-width: 8rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transform: scale(1);
+          transition: all 0.4s;
+          &--link {
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

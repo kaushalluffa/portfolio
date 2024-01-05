@@ -1,0 +1,26 @@
+$primary: #bc3cd8;
+$bg: #010208;
+$neutral1: #afb0b0;
+$neutral2: #e3e4e6;
+$gmail: #ea4335;
+$linkedin: #0077b5;
+$globe: #00aeff;
+$pdf: #ff0000;
+
+$logo: #5ce1e6;
+
+@mixin laptop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}

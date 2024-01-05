@@ -1,0 +1,114 @@
+@import "../../styles/_variables.scss";
+
+.footer {
+  padding: 5rem 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    text-align: center;
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 3.75rem;
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        line-height: 1.5;
+        &__title {
+          @include tablet {
+            font-size: 3rem;
+          }
+          color: $neutral1;
+          font-weight: 300;
+          &--bold {
+            font-weight: 600;
+            color: white;
+          }
+        }
+        &__description {
+          color: $neutral1;
+          font-weight: 300;
+        }
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 1.5rem;
+        @include tablet {
+          justify-content: space-between;
+          font-size: 3rem;
+        }
+        .envelope,
+        .globe,
+        .linkedin,
+        .github,
+        .pdf {
+          color: white;
+          transition: all 0.3s;
+          transform: scale(1);
+          cursor: pointer;
+        }
+        .envelope {
+          &:hover {
+            color: $gmail;
+            transform: scale(1.1);
+          }
+        }
+        .globe {
+          &:hover {
+            color: $globe;
+            transform: scale(1.1);
+          }
+        }
+        .linkedin {
+          &:hover {
+            color: $linkedin;
+            transform: scale(1.1);
+          }
+        }
+        .github {
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        .pdf {
+          &:hover {
+            color: $pdf;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    &--references {
+      @include tablet {
+        font-size: 1.2rem;
+      }
+      font-weight: 300;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      letter-spacing: 0.1rem;
+      .me {
+        color: $neutral1;
+        cursor: pointer;
+        .name {
+          color: white;
+        }
+      }
+      .design {
+        color: $neutral1;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}

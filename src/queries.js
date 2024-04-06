@@ -26,6 +26,32 @@ export const getProjects = gql`
     }
   }
 `;
+export const getHighlightedProjects = gql`
+  query GetHighlightedProjects {
+    highlightedProjects {
+      id
+      projectTitle
+      projectDescription
+      projectLastUpdated
+      projectGithubLink
+      projectDeployedVersion
+      projectThumbnail {
+        id
+        url
+      }
+      projectCover {
+        id
+        url
+      }
+      projectDemoVideoUrl
+      projectVideo {
+        id
+        url
+      }
+      stack
+    }
+  }
+`;
 export const getDevelopers = gql`
   query GetDevelopers {
     developers {
@@ -47,32 +73,6 @@ export const getDevelopers = gql`
         id
         url
       }
-    }
-  }
-`;
-export const getHighlights = gql`
-  query GetHighlights {
-    highlights {
-      id
-      projectTitle
-      projectDescription
-      projectLastUpdated
-      projectGithubLink
-      projectDeployedVersion
-      projectThumbnail {
-        id
-        url
-      }
-      projectCover {
-        id
-        url
-      }
-      projectDemoVideoUrl
-      projectVideo {
-        id
-        url
-      }
-      stack
     }
   }
 `;

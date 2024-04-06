@@ -2,42 +2,39 @@ import { FaGlobe, FaGithub } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import "./Work.scss";
 import { request } from "graphql-request";
-import { getHighlights, getProjects } from "../../queries";
+import { getHighlightedProjects, getProjects } from "../../queries";
 import { useLocation } from "react-router-dom";
-import Stack from "../Stack/Stack";
 import StackIcons from "../Stack/StackIcons";
 const Work = () => {
   const { pathname } = useLocation();
   const [projects, setProjects] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchProjects = async () => {
-      if (pathname === "/works") {
-        const projectsData = await request(
-          import.meta.env.VITE_HYGRAPH_ENDPOINT,
-          getProjects
-        );
-
-        setProjects(projectsData?.projects);
-      } else {
-        const highlightsData = await request(
-          import.meta.env.VITE_HYGRAPH_ENDPOINT,
-          getHighlights
-        );
-        setProjects(highlightsData?.highlights);
-      }
+      setIsLoading(true);
+      const projectsData = await request(
+        import.meta.env.VITE_HYGRAPH_ENDPOINT,
+        pathname === "/works" ? getProjects : getHighlightedProjects
+      );
+      setProjects((prev = []) => [
+        ...prev,
+        ...(projectsData?.highlightedProjects ?? projectsData?.projects),
+      ]);
+      setIsLoading(false);
     };
     fetchProjects();
-  }, []);
+  }, [pathname]);
   return (
-    <section className="work" id="work">
+    <section className="work">
       <h2 className="work__title">
         {pathname === "/works" ? "All" : "Highlighted"}
         <span className="work__title--bolded"> Projects</span>
       </h2>
       <div className="work__cards">
-        {!projects?.length
+        {isLoading
           ? "Loading"
-          : projects?.map((project) => (
+          : projects?.length > 0
+          ? projects?.map((project) => (
               <div className="work__cards--card" key={project?.id}>
                 <div className="col-1">
                   <div className="col-1__img">
@@ -86,7 +83,8 @@ const Work = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+          : "No Projects found"}
       </div>
     </section>
   );

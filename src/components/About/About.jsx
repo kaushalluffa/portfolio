@@ -1,40 +1,24 @@
-import React from "react";
-import webDevImg from '../../assets/images/webdev.jpeg'
-import musicImg from '../../assets/images/music.jpeg'
-import travelImg from '../../assets/images/travel.jpeg'
-import gameImg from '../../assets/images/game.jpeg'
-import './About.scss'
-const About = () => {
+import Stack from "../Stack/Stack";
+import "./About.scss";
+const About = ({ developerData }) => {
   return (
-    <div className="about" id="about">
+    <div className="about">
       <div className="about__wrapper">
         <div className="col-1">
           <h4 className="col-1__title">A BIT ABOUT ME</h4>
-          <p className="col-1__description">
-            I am a front-end developer who is passionate about creating
-            <span className="col-1__description--bold">{" "}
-              beautiful and functional digital experiences. Besides development,
-              I love games, travelling and music.
-            </span>
-          </p>
+          <p className="col-1__description">{developerData?.shortDesc ?? ""}</p>
         </div>
         <div className="col-2">
-            <div className="col-2__imgs">
-              <div className="col-2__imgs--image">
-                <img src={webDevImg} alt="web development photo"/>
+          <div className="col-2__imgs">
+            {developerData?.shortDescMedia?.map((m) => (
+              <div className="col-2__imgs--image" key={m?.id}>
+                <img src={m?.url} alt={m?.url} />
               </div>
-              <div className="col-2__imgs--image">
-                <img src={musicImg} alt="web development photo"/>
-              </div>
-              <div className="col-2__imgs--image">
-                <img src={travelImg} alt="web development photo"/>
-              </div>
-              <div className="col-2__imgs--image">
-                <img src={gameImg} alt="web development photo"/>
-              </div>
-            </div>
+            ))}
+          </div>
         </div>
       </div>
+      <Stack stack={developerData?.stack} />
     </div>
   );
 };

@@ -1,16 +1,15 @@
-import React from 'react'
-import Hero from '../Hero/Hero'
-import Work from '../Work/Work'
-import About from '../About/About'
+import React from "react";
+import Hero from "../Hero/Hero";
+import Work from "../Work/Work";
+import About from "../About/About";
 
-const Main = ({ projects,urlFor }) => {
+const Main = ({ developerData }) => {
   return (
     <>
-      <Hero />
-      <Work projects={projects} urlFor={urlFor}/>
-      <About />
+      <Hero developerData={developerData} />
+      <Work />
     </>
   );
 };
 
-export default Main
+export default Main;

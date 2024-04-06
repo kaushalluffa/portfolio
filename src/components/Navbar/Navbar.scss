@@ -62,6 +62,7 @@
     }
 
     .text {
+      color: #fff;
       position: relative;
       z-index: 3;
     }
@@ -119,7 +120,7 @@
   padding: 2rem 1rem;
   font-size: 1.2rem;
   background-color: white;
-  transition: all .3s;
+  transition: all 0.3s;
   a {
     padding-bottom: 0.3rem;
     color: $bg;
@@ -132,14 +133,13 @@
       background-color: $bg;
       content: "";
       position: absolute;
-      border-radius: .5rem;
+      border-radius: 0.5rem;
     }
   }
-  @include tablet{
+  @include tablet {
     display: none;
   }
 }
-.show{
+.show {
   display: flex;
-  
 }

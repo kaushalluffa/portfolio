@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import "./Footer.scss";
 
-const Footer = () => {
+const Footer = ({ developerData }) => {
   return (
     <section className="footer">
       <div className="footer__wrapper">
@@ -21,40 +21,44 @@ const Footer = () => {
             </p>
           </div>
           <div className="social-links">
-            <a
-              className="envelope"
-              href="mailto:kaushalluffa91@gmail.com"
-              target="_blank"
-            >
-              <FaEnvelope />
-            </a>
+            {developerData?.email && (
+              <a
+                className="envelope"
+                href={`mailto:${developerData?.email}`}
+                target="_blank"
+              >
+                <FaEnvelope />
+              </a>
+            )}
 
-            <a
-              className="linkedin"
-              href="https://linkedin.com/in/kaushalluffa"
-              target="_blank"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              className="github"
-              href="https://github.com/kaushalluffa"
-              target="_blank"
-            >
-              <FaGithub />
-            </a>
-            <a
-              className="pdf"
-              href="https://drive.google.com/file/d/1ko9RkZ1JEMRZMZo70SYoTBLgufweqtpz/view?usp=sharing"
-              download
-            >
-              <FaFilePdf />
-            </a>
+            {developerData?.linkedinUrl && (
+              <a
+                className="linkedin"
+                href={developerData?.linkedinUrl ?? ""}
+                target="_blank"
+              >
+                <FaLinkedin />
+              </a>
+            )}
+            {developerData?.githubUrl && (
+              <a
+                className="github"
+                href={developerData?.githubUrl ?? ""}
+                target="_blank"
+              >
+                <FaGithub />
+              </a>
+            )}
+            {developerData?.resume && (
+              <a className="pdf" href={developerData?.resume?.url} download>
+                <FaFilePdf />
+              </a>
+            )}
           </div>
         </div>
         <div className="footer__wrapper--references">
           <p className="me">
-            Developed By: <span className="name">Kaushal Luffa</span>
+            Developed By: <span className="name">Code Mastery</span>
           </p>
           <p className="design">
             Design inspiration:{" "}

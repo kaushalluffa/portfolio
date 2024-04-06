@@ -4,7 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4.625rem 6.688rem;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  @include tablet {
+    padding: 4rem;
+  }
   &__wrapper {
     display: flex;
     gap: 2.125rem;
@@ -26,10 +31,10 @@
       flex-direction: column;
       justify-content: center;
       gap: 1rem;
-      text-align:center;
-@include laptop{
-  text-align: start;
-}
+      text-align: center;
+      @include laptop {
+        text-align: start;
+      }
       &__title {
         font-size: 1.3rem;
         @include tablet {
